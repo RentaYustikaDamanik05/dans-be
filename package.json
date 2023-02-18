@@ -1,0 +1,20 @@
+{
+  "name": "dans-be",
+  "version": "1.0.0",
+  "description": "Dans BE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RentaYustikaDamanik05/dans-be.git"
+  },
+  "author": "Renta",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RentaYustikaDamanik05/dans-be/issues"
+  },
+  "homepage": "https://github.com/RentaYustikaDamanik05/dans-be#readme"
+}
