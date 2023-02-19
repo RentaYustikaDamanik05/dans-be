@@ -1,5 +1,5 @@
 # dans-be
 yarn
 
-## create database testdb
+``` create database testdb```
 yarn start
