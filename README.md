@@ -1,6 +1,6 @@
 # dans-be
 yarn
 
-create database testdd
+create database testdb
 
 yarn start
