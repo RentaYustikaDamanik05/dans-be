@@ -20,20 +20,20 @@ exports.allJob = async (req, res) => {
     if (body?.length > 0) {
       res.status(200).send({
         data: body,
-        message: 'All jobs is fetch succesfully',
+        message: 'All jobs is fetch succesfully.',
         succes: true,
       });
     } else {
       res.status(200).send({
         data: [],
-        message: 'All jobs is fetch succesfully',
+        message: 'All jobs is fetch succesfully.',
         succes: true,
       });
     }
   } catch (error) {
     res.status(500).send({
       data: {},
-      message: 'All jobs is fetch unsuccesfully',
+      message: 'All jobs is fetch unsuccesfully.',
       succes: false,
     });
   }
@@ -46,13 +46,13 @@ exports.detailJob = async (req, res) => {
     const body = await response.json();
     res.status(200).send({
       data: body,
-      message: `Job with id ${id} is fetch succesfully`,
+      message: `Job with id ${id} is fetch succesfully.`,
       succes: true,
     });
   } catch (error) {
     res.status(500).send({
       data: {},
-      message: `Job with id ${id} is fetch unsuccesfully`,
+      message: `Job with id ${id} is fetch unsuccesfully.`,
       succes: false,
     });
   }

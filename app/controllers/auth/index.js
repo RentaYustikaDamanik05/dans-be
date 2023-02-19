@@ -16,7 +16,9 @@ exports.signin = (req, res) => {
   })
     .then((user) => {
       if (!user) {
-        return res.status(404).send({ message: 'User Not found.' });
+        return res
+          .status(404)
+          .send({ message: 'User Not found.', success: false, data: {} });
       }
 
       var passwordIsValid = bcrypt.compareSync(
@@ -39,10 +41,20 @@ exports.signin = (req, res) => {
       res.status(200).send({
         data: { id: user.id, username: user.username, token: token },
         success: true,
-        message: 'User is authorized',
+        message: 'User login successfully.',
       });
     })
     .catch((err) => {
       res.status(500).send({ message: err.message, success: false, data: {} });
     });
+};
+
+exports.checkMe = (req, res) => {
+  res.status(200).send({
+    data: {
+      token: req.headers?.['x-access-token'],
+    },
+    success: true,
+    message: 'User is authorized.',
+  });
 };
