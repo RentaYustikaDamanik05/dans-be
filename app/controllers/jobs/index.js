@@ -17,11 +17,19 @@ exports.allJob = async (req, res) => {
   try {
     const response = await fetch(`${url}?${serializeQuery}`);
     const body = await response.json();
-    res.status(200).send({
-      data: body,
-      message: 'All jobs is fetch succesfully',
-      succes: true,
-    });
+    if (body?.length > 0) {
+      res.status(200).send({
+        data: body,
+        message: 'All jobs is fetch succesfully',
+        succes: true,
+      });
+    } else {
+      res.status(200).send({
+        data: [],
+        message: 'All jobs is fetch succesfully',
+        succes: true,
+      });
+    }
   } catch (error) {
     res.status(500).send({
       data: {},
