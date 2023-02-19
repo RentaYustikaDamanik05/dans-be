@@ -3,9 +3,19 @@ const { response } = require('express');
 const url = 'http://dev3.dansmultipro.co.id/api/recruitment/positions.json';
 const urlDetail = 'http://dev3.dansmultipro.co.id/api/recruitment/positions';
 
+const serialize = function (obj) {
+  var str = [];
+  for (var p in obj)
+    if (obj.hasOwnProperty(p)) {
+      str.push(encodeURIComponent(p) + '=' + encodeURIComponent(obj[p]));
+    }
+  return str.join('&');
+};
+
 exports.allJob = async (req, res) => {
+  const serializeQuery = serialize(req.query);
   try {
-    const response = await fetch(url);
+    const response = await fetch(`${url}?${serializeQuery}`);
     const body = await response.json();
     res.status(200).send({
       data: body,
